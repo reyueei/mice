@@ -113,3 +113,22 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.logout.postOnly=false
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.mice.Person'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.mice.PersonAuthority'
+grails.plugin.springsecurity.authority.className = 'com.mice.Authority'
+grails.plugin.springsecurity.requestMap.className = 'com.mice.Requestmap'
+grails.plugin.springsecurity.securityConfigType = 'Requestmap'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
