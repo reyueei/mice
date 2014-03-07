@@ -121,7 +121,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.mice.Person'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.mice.PersonAuthority'
 grails.plugin.springsecurity.authority.className = 'com.mice.Authority'
 grails.plugin.springsecurity.requestMap.className = 'com.mice.Requestmap'
-grails.plugin.springsecurity.securityConfigType = 'Requestmap'
+grails.plugin.springsecurity.securityConfigType = 'Annotation'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -129,6 +129,18 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
-]
+	'/**/favicon.ico':                ['permitAll'],
+	'/user/**':							['ROLE_ADMIN'],
+	'/role/**':							['ROLE_ADMIN'],
+	'/requestmap/**':					['ROLE_ADMIN'],
+	'/securityInfo/**':				['ROLE_ADMIN'],
+	'/registrationCode/**':			['ROLE_ADMIN'],
+	'/aclSid/**':					['ROLE_ADMIN'],
+	'/aclEntry/**':					['ROLE_ADMIN'],
+	'/aclObjectIdentity/**':		['ROLE_ADMIN'],
+	'/aclClass/**':					['ROLE_ADMIN'],
+	'/persistentLogin/**':			['ROLE_ADMIN'],	
+	'/securityInfo/**':				['ROLE_ADMIN']
+	]
+
 
