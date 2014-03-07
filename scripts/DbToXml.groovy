@@ -1,14 +1,13 @@
-package com.mice
+includeTargets << grailsScript("_GrailsInit")
 import groovy.sql.Sql
 import groovy.xml.MarkupBuilder
 import java.util.Properties
 
-import grails.plugin.springsecurity.annotation.Secured
- @Secured(['ROLE_ADMIN'])
-class NodeController {
-    static void main(args) {
+target(dbToXml: "The description of the script goes here!") {
+    // TODO: Implement script here
+	static void main(args) {
 
-    def props = new Properties()
+	def props = new Properties()
      new File('application.properties').withInputStream {
         stream -> props.load(stream)
      }
@@ -18,30 +17,32 @@ class NodeController {
   if(!outputFolder.exists())
       outputFolder.mkdir()
 
-      String userFileName = outFolderName + File.separatorChar + "totalmonthlydata" + ".xml"
+	  String userFileName = outFolderName + File.separatorChar + "totalmonthlydata" + ".xml"
 def sql = Sql.newInstance(props["DB_URL"],props["USERNAME"],props["PASSWORD"], props["DRIVERCLASS"])
 
 def userQuery = """
-    
-    select *from nodedata order by nodeDate;
-            
-            
+	
+	select *from nodedata order by nodeDate;
+			
+			
         """
  def xml = new MarkupBuilder(new FileWriter(new File(userFileName)))
 
 xml.chart(caption:"Temperature" , xAxisName:"time", yAxisName:"temp")
      {
-    
+	
  sql.eachRow( userQuery as String  ) {
-         row ->        set(label:(row.weekay), value:(row.total))                 
-        
-         
-    
-    
+         row ->		set(label:(row.weekay), value:(row.total)) 				
+		
+		 
+	
+	
 
-    }
+	}
   }
-    
-    }
-}
+	
+	}
 
+	}
+
+setDefaultTarget(dbToXml)
