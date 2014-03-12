@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
+		<r:require modules="bootstrap"/>
 		<title>Welcome to Grails</title>
 		<style type="text/css" media="screen">
 			#status {

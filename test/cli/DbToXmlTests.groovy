@@ -1,6 +1,6 @@
 import grails.test.AbstractCliTestCase
 
-class DbToXmlTests extends AbstractCliTestCase {
+class DbToXMLTests extends AbstractCliTestCase {
     protected void setUp() {
         super.setUp()
     }
@@ -9,7 +9,7 @@ class DbToXmlTests extends AbstractCliTestCase {
         super.tearDown()
     }
 
-    void testDbToXml() {
+    void testDbToXML() {
 
         execute(["db-to-xml"])
 

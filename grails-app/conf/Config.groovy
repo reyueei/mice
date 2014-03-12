@@ -63,7 +63,10 @@ grails {
         }
     }
 }
- 
+//twitter boootstrap 
+grails.plugins.twitterbootstrap.fixtaglib = true
+grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
+
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
@@ -140,7 +143,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/aclObjectIdentity/**':		['ROLE_ADMIN'],
 	'/aclClass/**':					['ROLE_ADMIN'],
 	'/persistentLogin/**':			['ROLE_ADMIN'],	
-	'/securityInfo/**':				['ROLE_ADMIN']
+	'/securityInfo/**':				['ROLE_ADMIN'],
+	'/nodeChart/**':			['ROLE_ADMIN']
 	]
 
 

@@ -1,13 +1,11 @@
-includeTargets << grailsScript("_GrailsInit")
 import groovy.sql.Sql
 import groovy.xml.MarkupBuilder
 import java.util.Properties
+includeTargets << grailsScript("_GrailsInit")
 
-target(dbToXml: "The description of the script goes here!") {
-    // TODO: Implement script here
-	static void main(args) {
-
-	def props = new Properties()
+target(dbToXML: "Fetch the data from database and copy it into xml format") {
+          
+  def props = new Properties()
      new File('application.properties').withInputStream {
         stream -> props.load(stream)
      }
@@ -17,22 +15,23 @@ target(dbToXml: "The description of the script goes here!") {
   if(!outputFolder.exists())
       outputFolder.mkdir()
 
-	  String userFileName = outFolderName + File.separatorChar + "totalmonthlydata" + ".xml"
+ String userFileName = outFolderName + File.separatorChar + "nodeData" + ".xml"
 def sql = Sql.newInstance(props["DB_URL"],props["USERNAME"],props["PASSWORD"], props["DRIVERCLASS"])
-
-def userQuery = """
-	
-	select *from nodedata order by nodeDate;
-			
-			
+  def userQuery = """
+		    SELECT 
+			nodeLabel, data, nodeDate
+			from nodeData
+			order by nodeDate
+		   ;
         """
- def xml = new MarkupBuilder(new FileWriter(new File(userFileName)))
+	
+  def xml = new MarkupBuilder(new FileWriter(new File(userFileName)))
 
-xml.chart(caption:"Temperature" , xAxisName:"time", yAxisName:"temp")
+ xml.chart(caption:"History Consumption(Month)" , xAxisName:"Week", yAxisName:"kilowatts")
      {
 	
  sql.eachRow( userQuery as String  ) {
-         row ->		set(label:(row.weekay), value:(row.total)) 				
+         row ->		set(label:(row.nodeLabel), value:(row.data), date:(row.nodeDate))
 		
 		 
 	
@@ -40,9 +39,7 @@ xml.chart(caption:"Temperature" , xAxisName:"time", yAxisName:"temp")
 
 	}
   }
-	
-	}
 
-	}
+}
 
-setDefaultTarget(dbToXml)
+setDefaultTarget(dbToXML)

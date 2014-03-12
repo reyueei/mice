@@ -56,6 +56,12 @@ grails.project.dependency.resolution = {
 	}
 
     plugins {
+	
+		//CSV plugin
+		compile ":csv:0.3.1"
+		//plugin for twitter bootstrap
+		 runtime ':twitter-bootstrap:3.0.3'
+		 
 		//plugin for spring security core
 		 compile ":spring-security-core:2.0-RC2"
 		compile ":spring-security-ui:1.0-RC1"	
