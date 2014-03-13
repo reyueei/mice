@@ -15,6 +15,7 @@ hibernate {
 environments {
     development {
         dataSource {
+		 driverClassName = "com.mysql.jdbc.Driver"
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/mice?autoreconnect=true"
         }
@@ -22,6 +23,7 @@ environments {
     test {
         dataSource {
             dbCreate = "update"
+			
             url = "jdbc:mysql://localhost/mice?autoreconnect=true"
         }
     }

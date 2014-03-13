@@ -57,6 +57,8 @@ grails.project.dependency.resolution = {
 
     plugins {
 	
+		//Quartz plugin
+		compile ':quartz:1.0.1'
 		//CSV plugin
 		compile ":csv:0.3.1"
 		//plugin for twitter bootstrap

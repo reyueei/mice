@@ -1,0 +1,21 @@
+<chart manageResize="1" palette='3' caption='Stock Price Monitor' subCaption='(Updates every 3 seconds) - Random data' dataStreamURL='/demos/gallery/DataProviders/RealTimeDYLine1.asp' canvasBottomMargin='150'  refreshInterval='3' numberPrefix='$' SNumberPrefix='$' setAdaptiveYMin='1' setAdaptiveSYMin='1'  xAxisName='Time' showRealTimeValue='1'  labelDisplay='Rotate' slantLabels='1' numDisplaySets='40' labelStep='2' PYAxisMinValue='29' PYAxisMaxValue='36' SYAxisMinValue='21' SYAXisMaxValue='26'>
+   <categories>
+   </categories>
+   <dataset seriesName='Google' showValues='0'>
+   </dataset>
+   <dataset seriesName='Dell' showValues='0' parentYAxis='S'>
+   </dataset>
+   <styles>
+      <definition>
+         <style type='font' name='captionFont' size='14' />
+      </definition>
+      <application>
+         <apply toObject='Caption' styles='captionFont' />
+         <apply toObject='Realtimevalue' styles='captionFont' />
+      </application>
+   </styles>
+   <trendlines>
+	<line parentYAxis='P' startValue='32.7' displayValue='Open' thickness='1' color='0372AB' dashed='1' />
+	<line parentYAxis='S' startValue='22.5' displayValue='Open' thickness='1' color='DF8600' dashed='1' />
+   </trendlines>
+</chart>
