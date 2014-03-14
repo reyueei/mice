@@ -7,8 +7,8 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
-        // "/" (controller:'NodeChart',action:'index')
+      //  "/"(view:"/index")
+        "/" (controller:'Home',action:'index')
 		"500"(view:'/error')
 	}
 }

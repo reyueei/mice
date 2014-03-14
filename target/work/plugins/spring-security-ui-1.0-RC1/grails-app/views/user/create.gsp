@@ -8,7 +8,6 @@
 
 <body>
 
-<h3><g:message code="default.create.label" args="[entityName]"/></h3>
 
 <g:form action="save" name='userCreateForm'>
 

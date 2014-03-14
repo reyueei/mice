@@ -73,6 +73,10 @@ the explicit tags above and edit those, not the taglib code.
 		<div>
 
 			<ul class="jd_menu jd_menu_slate">
+				
+				<li><g:link controller="home" action='index'><g:message code="Home"/></g:link></li>
+					
+				
 				<li><a class="accessible"><g:message code="spring.security.ui.menu.users"/></a>
 					<ul>
 						<li><g:link controller="user" action='search'><g:message code="spring.security.ui.search"/></g:link></li>
@@ -152,9 +156,10 @@ the explicit tags above and edit those, not the taglib code.
 			<div id='s2ui_header_body'>
 
 				<div id='s2ui_header_title'>
-					Spring Security Management Console
+					MICE Management Console
 				</div>
-
+				
+				
 				<span id='s2ui_login_link_container'>
 
 				<nobr>
@@ -162,6 +167,8 @@ the explicit tags above and edit those, not the taglib code.
 				<sec:ifLoggedIn>
 				Logged in as <sec:username/> (<g:link controller='logout'>Logout</g:link>)
 				</sec:ifLoggedIn>
+				
+				
 				<sec:ifNotLoggedIn>
 					<a href='#' id='loginLink'>Login</a>
 				</sec:ifNotLoggedIn>

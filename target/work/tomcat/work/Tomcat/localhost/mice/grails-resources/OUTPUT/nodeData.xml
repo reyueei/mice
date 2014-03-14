@@ -1,4 +1,0 @@
-<chart caption='History Consumption(Month)' xAxisName='Week' yAxisName='kilowatts'>
-  <set label='temperature' value='30.0' date='2014-03-06 21:50:42.0' />
-  <set label='temperature' value='70.0' date='2014-03-06 21:53:11.0' />
-</chart>
