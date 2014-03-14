@@ -1,4 +1,4 @@
-<chart caption="Kilowatt-hour" subCaption="(in watts)" yAxisName="kilowatts" xAxisName="months" alternateVGridColor="AFD8F8" baseFontColor="114B78" toolTipBorderColor="114B78" toolTipBgColor="E7EFF6" plotBorderDashed="0" plotBorderDashLen="2" plotBorderDashGap="2" useRoundEdges="1" showBorder="0" bgColor="FFFFFF,FFFFFF">
-<set label="February" value="15025" color="F6BD0F"/>
-<set label="March" value="33325" color="8BBA00"/>
+<chart caption='History Consumption(Month)' xAxisName='Week' yAxisName='kilowatts'>
+  <set label='temperature' value='30.0' date='2014-03-06 21:50:42.0' />
+  <set label='temperature' value='70.0' date='2014-03-06 21:53:11.0' />
 </chart>
