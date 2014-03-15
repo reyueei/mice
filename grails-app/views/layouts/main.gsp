@@ -17,6 +17,7 @@
 		<g:layoutHead/>
 		<g:javascript library="application"/>		
 		<r:layoutResources />
+		<r:require modules="application" />
 	</head>
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://migcoe.com"><img src="${resource(dir: 'images', file: 'mice-logo-unof.png')}" alt="Grails"/></a></div>

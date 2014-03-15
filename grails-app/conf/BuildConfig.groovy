@@ -61,7 +61,7 @@ grails.project.dependency.resolution = {
 		compile ":geolocation:0.4.1"
 	
 		//Quartz plugin
-		// compile ':quartz:1.0.1'
+		 compile ':quartz:1.0.1'
 		//CSV plugin
 		compile ":csv:0.3.1"
 		//plugin for twitter bootstrap
@@ -82,7 +82,7 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.6"
         runtime ":database-migration:1.3.8"
         runtime ":jquery:1.10.2.2"
-        runtime ":resources:1.2.1"
+        runtime ":resources:1.2.7"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"

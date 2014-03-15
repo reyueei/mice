@@ -1,47 +1,102 @@
 package com.mice
-import groovy.sql.Sql
-import groovy.xml.MarkupBuilder
-import java.util.Properties
-
 import grails.plugin.springsecurity.annotation.Secured
- @Secured(['ROLE_ADMIN'])
+import static org.springframework.http.HttpStatus.*
+import grails.transaction.Transactional
+@Secured(['ROLE_ADMIN','ROLE_USER'])
+@Transactional(readOnly = true)
 class NodeController {
-    static void main(args) {
 
-    def props = new Properties()
-     new File('application.properties').withInputStream {
-        stream -> props.load(stream)
-     }
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-  String outFolderName = (props["OUTPUT_FOLDER"]==null)?"."+File.separatorChar : props["OUTPUT_FOLDER"]
-  File outputFolder = new File(outFolderName)
-  if(!outputFolder.exists())
-      outputFolder.mkdir()
-
-      String userFileName = outFolderName + File.separatorChar + "totalmonthlydata" + ".xml"
-def sql = Sql.newInstance(props["DB_URL"],props["USERNAME"],props["PASSWORD"], props["DRIVERCLASS"])
-
-def userQuery = """
-    
-    select *from nodedata order by nodeDate;
-            
-            
-        """
- def xml = new MarkupBuilder(new FileWriter(new File(userFileName)))
-
-xml.chart(caption:"Temperature" , xAxisName:"time", yAxisName:"temp")
-     {
-    
- sql.eachRow( userQuery as String  ) {
-         row ->        set(label:(row.weekay), value:(row.total))                 
-        
-         
-    
-    
-
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Node.list(params), model:[nodeInstanceCount: Node.count()]
     }
-  }
-    
+
+    def show(Node nodeInstance) {
+        respond nodeInstance
+    }
+
+    def create() {
+        respond new Node(params)
+    }
+
+    @Transactional
+    def save(Node nodeInstance) {
+        if (nodeInstance == null) {
+            notFound()
+            return
+        }
+
+        if (nodeInstance.hasErrors()) {
+            respond nodeInstance.errors, view:'create'
+            return
+        }
+
+        nodeInstance.save flush:true
+
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'nodeInstance.label', default: 'Node'), nodeInstance.id])
+                redirect nodeInstance
+            }
+            '*' { respond nodeInstance, [status: CREATED] }
+        }
+    }
+
+    def edit(Node nodeInstance) {
+        respond nodeInstance
+    }
+
+    @Transactional
+    def update(Node nodeInstance) {
+        if (nodeInstance == null) {
+            notFound()
+            return
+        }
+
+        if (nodeInstance.hasErrors()) {
+            respond nodeInstance.errors, view:'edit'
+            return
+        }
+
+        nodeInstance.save flush:true
+
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Node.label', default: 'Node'), nodeInstance.id])
+                redirect nodeInstance
+            }
+            '*'{ respond nodeInstance, [status: OK] }
+        }
+    }
+
+    @Transactional
+    def delete(Node nodeInstance) {
+
+        if (nodeInstance == null) {
+            notFound()
+            return
+        }
+
+        nodeInstance.delete flush:true
+
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Node.label', default: 'Node'), nodeInstance.id])
+                redirect action:"index", method:"GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+
+    protected void notFound() {
+        request.withFormat {
+            form {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'nodeInstance.label', default: 'Node'), params.id])
+                redirect action: "index", method: "GET"
+            }
+            '*'{ render status: NOT_FOUND }
+        }
     }
 }
-

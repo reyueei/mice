@@ -3,8 +3,12 @@ package com.mice
 class Node {
 	
 	String label
-	double data
+	Double data
+	Date dateCreated
+	Date lastUpdated
 
     static constraints = {
-    }
+    label blank:false, unique:true
+	data nullable: true
+	}
 }

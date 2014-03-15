@@ -8,7 +8,7 @@ import groovy.sql.Sql
 import grails.plugin.springsecurity.annotation.Secured
 
 class NodeChartController {
-def DbToXMLService
+
 @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index () { 
 		
@@ -16,18 +16,31 @@ def DbToXMLService
 	def temperature = {
 	
 	}
+	@Secured(['ROLE_ADMIN','ROLE_USER'])
+	def realtime () {
+	
+	
+	
+	
+	}
+	
 	
 	def dataSource // the Spring-Bean "dataSource" is auto-injected
-
-    def list = {
-       DbToXMLService.dbAccess()
+	def dbToXMLService
+@Secured(['ROLE_ADMIN','ROLE_USER'])
+    def list () {
+       dbToXMLService.dbAccess()
 		
 		
 	}
 	
 @Secured(['ROLE_ADMIN','ROLE_USER'])
-	def dtree () {
-	
+	def test() {
+	def db = new Sql(dataSource) // Create a new instance of groovy.sql.Sql with the DB of the Grails app
+
+        def result = db.rows("SELECT nodeLabel, data, nodeDate from nodeData order by nodeDate") // Perform the query
+
+       [result : result]  // return the results as model
 	
 	}
 

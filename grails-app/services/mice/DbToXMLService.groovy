@@ -12,7 +12,8 @@ def dataSource
 
         def result = db.rows("SELECT nodeLabel, data, nodeDate from nodeData order by nodeDate") // Perform the query
 
-        return result // return the results as model
+         // return the results as model
+	 [result : result]
 	
 	}
 }
