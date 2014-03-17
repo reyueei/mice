@@ -29,19 +29,14 @@ class NodeChartController {
 	def dbToXMLService
 @Secured(['ROLE_ADMIN','ROLE_USER'])
     def list () {
-       dbToXMLService.dbAccess()
+      
 		
 		
 	}
 	
 @Secured(['ROLE_ADMIN','ROLE_USER'])
 	def test() {
-	def db = new Sql(dataSource) // Create a new instance of groovy.sql.Sql with the DB of the Grails app
 
-        def result = db.rows("SELECT nodeLabel, data, nodeDate from nodeData order by nodeDate") // Perform the query
-
-       [result : result]  // return the results as model
-	
 	}
 
 }

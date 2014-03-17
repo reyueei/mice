@@ -1,29 +1,63 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-		<g:layoutHead/>
-		<g:javascript library="application"/>		
-		<r:layoutResources />
-		<r:require modules="application" />
-	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://migcoe.com"><img src="${resource(dir: 'images', file: 'mice-logo-unof.png')}" alt="Grails"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-		<r:layoutResources />
-	</body>
+<html>
+<head>
+	
+	<link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}" type="text/css">
+	<title>Hello</title>
+	<style type='text/css' media='screen'>
+	img {
+	max-width: 100%;
+	height: auto;
+	}
+	@media \0screen {
+	  img { 
+		width: auto; /* for ie 8 */
+	  }
+	}
+	@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+	
+	</style>
+</head>
+<body>
+
+ 
+ 
+ <div ic="container" width="100%">
+<div id="header"   style="background-color:#0066cc;font-family:verdana;text-align:left;padding-top:5px;color:white;">
+<div style="position:absolute;right:20px;padding:20px;height:75px; width:150px" align="center" method="post" action="">
+				<sec:ifLoggedIn>
+				Welcome Back! <b><sec:username/></b> <br/>
+				<g:link controller='logout'>Logout</g:link>
+				</sec:ifLoggedIn>
+				<sec:ifNotLoggedIn>
+				<g:link controller="login" action="auth">Login</g:link>
+				</sec:ifNotLoggedIn>				
+</div>
+<g:img dir="images" file="combine.png" width="90px" height="90px" style="padding-left:20px; padding-top:10px; position:absolute;left:20px"/>
+<h1 align="center;" style="padding-left:140px;">WiTMon</h1>
+<p style="letter-spacing:8px;font-size:20px;padding-left:140px;">Wireless Distribution Transformer Monitoring System</p>
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href="/mice/"><g:img dir="images" file="home.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp Home</span></a></li>
+   <li><a href="/mice/nodeChart/realtime"><g:img dir="images" file="graph.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp Visualization</span></a></li>
+   <li><a href="/mice/map/index"><g:img dir="images" file="map.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>Location</span></a></li>
+   <li class='last'><a href="/mice/home/setting"><g:img dir="images" file="graph.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>Settings</span></a></li>
+</ul>
+</div>
+<div id="content" height="100px">
+<br/>
+</div>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;bottom:10px">
+&copy 2014 MICE</div>
+
+</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+</body>
+
 </html>

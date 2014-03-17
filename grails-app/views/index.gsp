@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<r:require modules="bootstrap"/>
+		
 		<title>Welcome to MICESS</title>
 		<style type="text/css" media="screen">
 			#status {

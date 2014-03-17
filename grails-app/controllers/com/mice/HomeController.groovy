@@ -12,4 +12,7 @@ class HomeController {
 @Secured(['ROLE_ADMIN','ROLE_USER'])
     def index() { }
 	
+	@Secured(['ROLE_ADMIN','ROLE_USER'])
+    def about() { }
+	
 }
