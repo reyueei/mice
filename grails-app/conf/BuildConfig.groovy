@@ -72,7 +72,7 @@ grails.project.dependency.resolution = {
 		compile ":spring-security-ui:1.0-RC1"	
 	
         // plugins for the build system only
-        build ":tomcat:7.0.47"
+        build ":tomcat:7.0.50"
 
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
