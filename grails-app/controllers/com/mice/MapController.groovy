@@ -7,4 +7,8 @@ class MapController {
     def index() {
 
 	}
+	@Secured(['ROLE_ADMIN'])
+	def gis() {
+	
+	}
 }

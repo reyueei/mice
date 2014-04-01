@@ -41,18 +41,45 @@
    <li><a href="/mice/"><g:img dir="images" file="home.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp Home</span></a></li>
    <li><a href="/mice/nodeChart/index"><g:img dir="images" file="graph.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp Visualization</span></a></li>
    <li><a href="/mice/map/index"><g:img dir="images" file="map.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>Location</span></a></li>
-   <li><a href="/mice/home/setting"><g:img dir="images" file="set.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>Settings</span></a></li>
+  <li><a href="/mice/user"  target="_blank" ><g:img dir="images" file="set.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>Settings</span></a></li>
    <li class='active'><a href="/mice/home/about"><g:img dir="images" file="aboutus.png" height="15px" width="15 px" /><span style="font-size:15px">&nbsp <span>About Us</span></a></li>
 </ul>
 </div>
-<div id="content" height="100px" style="button:100%">
 
-<h2>Baaaahhhhhhh</h2>
+<div id="content" style="button:100%; height:100%;">
+<table style="width:100%; height:500px" >
+<tr >
+	<td><g:img dir="images" file="MICE.jpg"/></td>
+<td width="652px" style="padding:20px">
+<h2 style="font-family: courier">
 
+
+<h3>Team Mice</h3>
+
+<h4>We are the 5th year Computer Engineering Students from Mindanao State University- Iligan Institute of Technology(MSU-IIT)</h4>
+<br/>
+<br/>
+
+<br/>
+
+ Members: 
+
+<ol>
+<li>Kister Genesis M. Jimenez (Adviser)</li>
+<li>Kim Chesed F. Paler</li>
+<li>Jimmy E. Unilongo Jr.</li>
+<li>Romarie E. Yuag</li>
+</ol>
+
+</h2>
+</td>
+</tr>
+</table>
 </div>
 
 <div id="footer" style="background-color:#FFA500;position:fixed; clear:both;text-align:center;width:100%;bottom:0px">
 &copy 2014 MICE</div>
+
 
 </div>
 </div>

@@ -156,7 +156,7 @@ the explicit tags above and edit those, not the taglib code.
 			<div id='s2ui_header_body'>
 
 				<div id='s2ui_header_title'>
-					MICE Management Console
+					WiTMon Management Console
 				</div>
 				
 				

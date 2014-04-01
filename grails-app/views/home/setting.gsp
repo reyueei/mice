@@ -45,8 +45,8 @@
  <li class='last'><a href="/mice/home/about"><g:img dir="images" file="aboutus.png" height="15px" width="15px" /><span style="font-size:15px">&nbsp <span>About Us</span></a></li>
    </ul>
 </div>
-<div id="content" height="100px">
-<g:link controller="user"><b>Manage Users</b></g:link>
+<div id="content" style="button:100%; height:500px;">
+<g:link controller="user" action="create" target="_blank"><g:img dir="images" file="add.png" height="50px" width="50px" /><span style="font-size:15px">Manage Users</span></g:link>
 </div>
 
 <div id="footer" style="background-color:#FFA500;position:fixed; clear:both;text-align:center;width:100%;bottom:0px">

@@ -30,7 +30,9 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost/mice?autoreconnect=true"
+            url = "jdbc:mysql://localhost/migcoec1_mice"
+			username="migcoec1_mice"
+			password="Comeng321@"
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000

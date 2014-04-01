@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Hello</title>
+	<title>Welcone to WiTMon</title>
 <style type='text/css' media='screen'>
 	img {
 		max-width: 100%;
@@ -60,8 +60,9 @@
 <g:img dir="images" file="energy-icon.png"/>
 <p style="color:black">It does not only help save money but also we can save more energy.</p>
 </div>
-
-<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+<div id="content" style="button:100%; height:700px;">
+</div>
+<div id="footer" style="background-color:#FFA500;position:fixed; clear:both;text-align:center;width:100%;bottom:0px">
 &copy 2014 MICE</div>
 
 </div>

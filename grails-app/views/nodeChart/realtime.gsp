@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<title>WiTMon</title>
 <g:javascript src = "Charts/FusionCharts.js" />
 <g:javascript src = "Charts/jquery.min.js" />
 <g:javascript src = "Charts/prettify.js" />
@@ -35,17 +35,17 @@
 			
 				window.dataUpdateTimer = window.setInterval (function (){ 
 					provideRealTimeDataThroughJSAPI(e.sender);
-				},3000 );
+				},5000 );
 			});			
 				
 			function provideRealTimeDataThroughJSAPI(sender)
 			{
 				var updater= sender.feedData? sender : null;
 				
-				var p = (Math.random()*6)+30;
-				var v = (Math.random()*800)+58200;
+				var p = (Math.random()*235)+228;
+				var v = (Math.random()*2)+1;
 				var dateTimeLabel = new Date().toString("HH:mm:ss");
-				if(updater) updater.feedData("&label=" + dateTimeLabel + "&value=" + p + "|" + v );
+				if(updater) updater.feedData("&label=" + dateTimeLabel + "&value=" + p + "|" + v);
 			}
 		
 			
